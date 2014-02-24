@@ -159,7 +159,6 @@ var myContent = new MyContent();
 myContent.initTestPage();
 //------------------------------- End code ----------------------------------\\
 
-
 /********* Comment this section out when we want to run our website **********\
 //-------------------------- Start unit testing -----------------------------\\
 var assert = require("assert");
@@ -200,4 +199,3 @@ describe ("FibonacciContainer.fibNumberAtIndex():", function() {
 });
 //---------------------------- End unit testing -----------------------------\\
 \*****************************************************************************/
-
