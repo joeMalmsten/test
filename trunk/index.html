@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="testStyle.css">
+		<title>index for test repo</title>
+	</head>
+
+	<body>
+		<div id="testInputArea">
+			<form name="testInputForm">
+				<h1>Javascript function Input</h1>
+				<p>Input parameters and run the javascript functions from here. Function descriptions below</p>
+
+				<label> Fibonacci at index
+					<span class="small">index > 0</span>
+				</label>
+				<input id="fibIndex" type="number" value="fibIndex" min="0">
+			</form>
+			<div class="buffer"></div>
+		</div>
+		<textarea id="debugLog" class="textArea"></textarea>
+		<div id='fibNumberButton' class='button one' type='button'>Get Fib Number</div>
+		<div id='dumpHistoryButton' class='button two' type='button'>Dump history</div>
+		<div id='clearLogButton' class='button three' type='button'>Clear log</div>
+		<script src="testScript.js"></script>
+	</body>
+</html>
