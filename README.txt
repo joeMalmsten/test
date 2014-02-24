@@ -1,1 +1,3 @@
-This is my first test repo on git
+This project is a simple javascript/html based program that will calculate a fibonacci number at the given indice. To run this code simply open the index.html and put a number into the displayed input field. When a value is put into the field press the fibonacci button and the output should be displayed in the textbox provided, if there is no textbox the number will be displayed in the console.log.
+
+If you wish to the mocha tests in this code simply uncomment out the block of code where it is contained and from the command prompt in the directory where the file is installed type "mocha testScript.js". This assumed you have mocha installed
