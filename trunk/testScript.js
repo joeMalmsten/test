@@ -5,7 +5,7 @@ Purpose: test project for git, node, and less before real coding test
    Date: 2/23/2014
 \*****************************************************************************/
 
-//--------------------------- Object Definitions ----------------------------\\ 
+//--------------------------- Object definitions ----------------------------\\ 
 
 /*****************************************************************************\
  Object: FibonacciContainer
@@ -21,9 +21,14 @@ function FibonacciContainer() {
 
 // Finds the fibonacci number at the given index, main workhorse function, simple interative version
 FibonacciContainer.prototype.fibNumberAtIndex = function(index) {
+	// Check for bad indices
+	if (typeof(index) !== "number" || index < 0) {
+		return -1;
+	}
+
 	var a = 0;
 	var b = 1;
-	for(var i = 0; i < index; i++) {
+	for (var i = 0; i < index; i++) {
 		var temp = b;
 		b = a + b;
 		a = temp;
@@ -121,6 +126,11 @@ MyContent.prototype.clearLog = function() {
 // This is the only real function call inside the "main" of the javascript,
 //   everything else should be Handled through event listeners
 MyContent.prototype.initTestPage = function() {
+	// This is here to make unit testing possible without having to comment out any code
+	if(typeof(document) == "undefined"){
+		return;
+	}
+
 	var fibButton = document.getElementById("fibNumberButton");
 	if (fibButton != null) { 
 		fibButton.addEventListener("click", this.attemptFibAtIndex.bind(this));
@@ -142,9 +152,52 @@ MyContent.prototype.initTestPage = function() {
 		this.logComment("clearLogButton is NULL");
 	}
 }
-//----------------------------- End Definitions ----------------------------\\
+//----------------------------- End definitions ----------------------------\\
 
-//------------------------------- Start Code -------------------------------\\
+//------------------------------- Start code -------------------------------\\
 var myContent = new MyContent();
 myContent.initTestPage();
-//------------------------------- End Code ----------------------------------\\
+//------------------------------- End code ----------------------------------\\
+
+
+/********* Comment this section out when we want to run our website **********\
+//-------------------------- Start unit testing -----------------------------\\
+var assert = require("assert");
+describe ("FibonacciContainer.fibNumberAtIndex():", function() {
+	it ("should return the fibonacci number at the given indices [0, 99]", function() {
+		// An array containing the first 100 fibonacci numbers
+		var fibTestArray = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 
+		10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 
+		9227465, 14930352, 24157817, 39088169, 63245986, 102334155, 165580141, 267914296, 433494437, 701408733, 1134903170, 
+		1836311903, 2971215073, 4807526976, 7778742049, 12586269025, 20365011074, 32951280099, 53316291173, 86267571272, 
+		139583862445, 225851433717, 365435296162, 591286729879, 956722026041, 1548008755920, 2504730781961, 4052739537881, 
+		6557470319842, 10610209857723, 17167680177565, 27777890035288, 44945570212853, 72723460248141, 117669030460994, 
+		190392490709135, 308061521170129, 498454011879264, 806515533049393, 1304969544928657, 2111485077978050, 3416454622906707, 
+		5527939700884757, 8944394323791464, 14472334024676220, 23416728348467684, 37889062373143900, 61305790721611580, 
+		99194853094755490, 160500643816367070, 259695496911122560, 420196140727489660, 679891637638612200, 1100087778366101900, 
+		1779979416004714000, 2880067194370816000, 4660046610375530000, 7540113804746346000, 12200160415121877000, 19740274219868226000, 
+		31940434634990100000, 51680708854858330000, 83621143489848430000, 135301852344706760000, 218922995834555200000];
+
+		var retval = -1;
+		for (var i = 0; i < fibTestArray.length; ++i) {
+			retval = myContent.fibContainer.fibNumberAtIndex(i);
+			assert.equal(retval, fibTestArray[i]);
+		}
+	});
+
+	it ("should return -1 at any index not a non-negative number [0, ∞]", function() {
+		// An array containing all invalid inputs
+		var fibInputArray = [-1, -1, -2, -3, -5, -8, -13, -21, -34, -55, -89, -144, -233, -377, -610, -987, -1597, -2584, -4181, -6765, 
+		-10946, -17711, -28657, -46368, -75025, -121393, -196418, -317811, -514229, -832040, -1346269, -2178309, -3524578, -5702887,
+		"test", "djflsj;df", "12x2", "0x", "", null, "0", "1", false, true];
+
+		var retval = -1;
+		for (var i = 0; i < fibInputArray.length; ++i) {
+			retval = myContent.fibContainer.fibNumberAtIndex(fibInputArray[i]);
+			assert.equal(retval, -1);
+		}
+	});
+});
+//---------------------------- End unit testing -----------------------------\\
+\*****************************************************************************/
+
