@@ -7,8 +7,14 @@ Placelocal is the flagship product for Paperg. It is a `php` app with several as
 All of these tools have to be installed before you can use them to run the app.
 [node.js](http://nodejs.org/download/) Note: npm command can be used once node.js is installed.<br/>
 [git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) Note: npm has git, I prefer downloading from thier website though.<br/>
-Bower - "npm install -g bower"<br/>
-Grunt - "npm install -g grunt-cli"<br/>
+Bower:
+```bash
+"npm install -g bower"
+```
+Grunt: 
+```bash
+"npm install -g grunt-cli"
+```
 
 -g on npm causes the package to be installed globally. 
 
