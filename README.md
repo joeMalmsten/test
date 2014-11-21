@@ -157,7 +157,7 @@ Now the app is built and ready for you to work on it and test. Inorder to replic
 	``` 
 
 	The local path to this file relative to repo source will be 'repo/services/templatem/'. <br/><br/>
-	
+
 	'vagrant.files.translateFile' has to point to the path location of the 'vagrant.files.translateFile' relative to your vagrant box.<br/>
 	'vagrant.files.templateFolder' has to point to the path location of the folder that contains the templates relative to your vagrant box.<br/><br/>
 
@@ -165,12 +165,6 @@ Now the app is built and ready for you to work on it and test. Inorder to replic
 	```
 	vagrant.files.translateFile = /vagrant/public_html/v3/v3framework/config/templatem.translate.json
 	vagrant.files.templateFolder = /vagrant/public_html/v3/v3framework/adtemplates
-	```
-
-	you can do this for your local machine as well, you will probably NOT have a local database setup though so I would not worry about this unless specifically required to work locally instead of through the Devbox. For completeness sake here are my updated variables for the local machine:
-	```
-	local.files.translateFile = ../../public_html/v3/v3framework/config/templatem.translate.json
-	local.files.templateFolder = ../../public_html/v3/v3framework/adtemplates
 	```
 
 9. Once 'sh templatem.sh resettemplates' works you need to process the templates with the command
