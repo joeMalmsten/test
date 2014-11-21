@@ -127,13 +127,13 @@ Now the app is built and ready for you to work on it and test. Inorder to replic
 	```bash
 	vagrant ssh
 	```
-	So long as your vagrant up was successful you should be able to enter your box no problem.
+	So long as your vagrant up was successful you should be able to enter your box no problem. Once inside go to this directory.
 
 	```bash
 	cd /vagrant/services/templatem/
 	```
 
-	Inside this directory you should only see a 'update.sh' file. Note: the leading '/' in 'cd /vagrant/services/templatem/' is required otherwise you will not see the path.
+	Inside this directory you should only see a 'update.sh' file. **Note: the leading '/' in 'cd /vagrant/services/templatem/' is required otherwise you will not see the path.**
 
 7. Run 
 	```bash
