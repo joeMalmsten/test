@@ -7,6 +7,7 @@ Placelocal is the flagship product for Paperg. It is a `php` app with several as
 All of these tools have to be installed before you can use them to run the app.<br/><br/>
 [node.js](http://nodejs.org/download/) **Note:** npm command can be used once node.js is installed.<br/>
 [git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) **Note:** npm can install git, however I prefer downloading from thier website though.<br/><br/>
+**Note:** If you're new to git, view [Git Primer and Workflow](https://paperg.atlassian.net/wiki/pages/viewpage.action?pageId=2490418) and [Christian's Git Tutorial](https://paperg.atlassian.net/wiki/display/EN/Christian%27s+Git+Tutorial).
 Bower:
 ```bash
 "npm install -g bower"
@@ -29,8 +30,6 @@ So fork the repo, clone it to your machine and lets get started!
 ```bash
 git clone https://github.com/YOURUSERNAMEHERE/placelocal.git
 ```
-
-If you're new to git, view [Git Primer and Workflow](https://paperg.atlassian.net/wiki/pages/viewpage.action?pageId=2490418) and [Christian's Git Tutorial](https://paperg.atlassian.net/wiki/display/EN/Christian%27s+Git+Tutorial).
 
 Lastly `cd ` into your placelocal repo for the next section.
 
