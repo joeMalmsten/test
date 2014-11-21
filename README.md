@@ -94,7 +94,7 @@ Now the app is built and ready for you to work on it and test. Inorder to replic
  	* Open `C:/Windows/System32/Drivers/etc` in Notepad
  
    ### Linux/OSX
-	I use [vim](http://vimdoc.sourceforge.net/) below but use your editor of choice. Note: vim is powerful but different from most editors, here's a [hotkey cheatsheet](http://www.glump.net/files/2012/08/vi-vim-cheat-sheet-and-tutorial.pdf) if you want to check it out!
+	I use [vim](http://vimdoc.sourceforge.net/) below but use your editor of choice. **Note:** vim is powerful but different from most editors, here's a [hotkey cheatsheet](http://www.glump.net/files/2012/08/vi-vim-cheat-sheet-and-tutorial.pdf).
 	```bash
     sudo vim /etc/hosts
    ```
