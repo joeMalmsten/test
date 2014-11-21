@@ -5,10 +5,8 @@
 Placelocal is the flagship product for Paperg. It is a `php` app with several associated services. We use `composer` to manage `php` dependencies, `bower` for `js` dependencies and `grunt` for building the frontend components.<br/>
 
 All of these tools have to be installed before you can use them to run the app.<br/><br/>
-[node.js](http://nodejs.org/download/)<br/>&nbsp;&nbsp;&nbsp;&nbsp;
-Note: npm command can be used once node.js is installed.<br/>
-[git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)<br/>&nbsp;&nbsp;&nbsp;&nbsp; 
-Note: npm has git, I prefer downloading from thier website though.<br/><br/>
+[node.js](http://nodejs.org/download/) Note: npm command can be used once node.js is installed.<br/>
+[git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) Note: npm can install git, however I prefer downloading from thier website though.<br/><br/>
 Bower:
 ```bash
 "npm install -g bower"
