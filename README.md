@@ -68,14 +68,11 @@ php -r "readfile('https://getcomposer.org/installer');" | php && sudo mv compose
 This will all happen in your bash (or equivalent) terminal.
 
 1. `composer install`<br/>
-This will populate your `vendor/` directory with our third-party dependencies.<br/>
-If you get any errors then most likely you have to install some individual packages due to some questionable dependency tracing.
-
-2. `npm install -g grunt-cli bower` <br/>
-	This installs some globally needed packages, **only do this if you didn't do it in the earlier steps.**
-3. `npm install`<br/>
+	This will populate your `vendor/` directory with our third-party dependencies.<br/>
+	If you get any errors then most likely you have to install some individual packages due to some questionable dependency tracing.
+2. `npm install`<br/>
    This will install all of the front-end dependencies
-4. `grunt`<br/>
+3. `grunt`<br/>
    This will build the app so it's ready for using
 
 Now the app is built and ready for you to work on it and test. Inorder to replicate the production environment for testing and hacking we have implemented a `Vagrant` box. Now on to setting up and running that.
