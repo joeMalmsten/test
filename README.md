@@ -2,13 +2,13 @@
 
 # Placelocal
 
-Placelocal is the flagship product for Paperg. It is a `php` app with several associated services. We use `composer` to manage `php` dependencies, `bower` for `js` dependencies and `grunt` for building the frontend components.
+Placelocal is the flagship product for Paperg. It is a `php` app with several associated services. We use `composer` to manage `php` dependencies, `bower` for `js` dependencies and `grunt` for building the frontend components.<br/>
 
 All of these tools have to be installed before you can use them to run the app.
-[node.js](http://nodejs.org/download/) Note: npm command can be used once node.js is installed
-[git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) Note: npm has git, I prefer downloading from thier website though.
-Bower - "npm install -g bower"
-Grunt - "npm install -g grunt-cli"
+[node.js](http://nodejs.org/download/) Note: npm command can be used once node.js is installed.<br/>
+[git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) Note: npm has git, I prefer downloading from thier website though.<br/>
+Bower - "npm install -g bower"<br/>
+Grunt - "npm install -g grunt-cli"<br/>
 
 -g on npm causes the package to be installed globally. 
 
@@ -99,80 +99,81 @@ Now the app is built and ready for you to work on it and test. Inorder to replic
 
 4. Add the following lines to your host file:
 
-```
-10.0.0.10   www.placelocal-dev.com
-10.0.0.10   api.placelocal-dev.com
-10.0.0.10   tracking.placelocal-dev.com
-10.0.0.10   nytimespub.placelocal-dev.com
-10.0.0.10   assets.placelocal-dev.com
-10.0.0.10   images.placelocal-dev.com
-```
+	```
+	10.0.0.10   www.placelocal-dev.com
+	10.0.0.10   api.placelocal-dev.com
+	10.0.0.10   tracking.placelocal-dev.com
+	10.0.0.10   nytimespub.placelocal-dev.com
+	10.0.0.10   assets.placelocal-dev.com
+	10.0.0.10   images.placelocal-dev.com
+	```
 
 5. With your terminal in the placelocal root, run `vagrant up`
 
-After vagrant finishes up, you will be able to use 
-```
-www.placelocal-dev.com.
-```
+	After vagrant finishes up, you will be able to use 
+	```
+	www.placelocal-dev.com.
+	```
 
-In order to see creatives you will need to run templatem.sh from the /vagrant/services/templatem directory
+	In order to see creatives you will need to run templatem.sh from the /vagrant/services/templatem directory
 6. To do this you will need to ssh into your vagrant box, from the local repo source directory run:
-```bash
-vagrant ssh
-```
-So long as your vagrant up was successful you should be able to enter your box no problem.
 
-```bash
-cd /vagrant/services/templatem/
-```
+	```bash
+	vagrant ssh
+	```
+	So long as your vagrant up was successful you should be able to enter your box no problem.
 
-Inside this directory you should only see a 'update.sh' file. Note: the leading '/' in 'cd /vagrant/services/templatem/' is required otherwise you will not see the path.
+	```bash
+	cd /vagrant/services/templatem/
+	```
+
+	Inside this directory you should only see a 'update.sh' file. Note: the leading '/' in 'cd /vagrant/services/templatem/' is required otherwise you will not see the path.
 
 7. Run 
-```bash
-sh update.sh
-```
+	```bash
+	sh update.sh
+	```
 
-This will populate the folder with the files
-```
-templatem.config.properties
-templatem.sh
-templatem.jar
-log4j.properties
-```
+	This will populate the folder with the files
+	```
+	templatem.config.properties
+	templatem.sh
+	templatem.jar
+	log4j.properties
+	```
 
 8. Run 
-```bash
-sh templatem.sh resettemplates
-```
+	```bash
+	sh templatem.sh resettemplates
+	```
 
-If you get a path error running this command you will need to go into 'template.config.properties' file on your local machine(vagrant shares folders with the local machine so changes made to local update the vagrant box) and update:
-```
-vagrant.files.translateFile
-vagrant.files.templateFolder
-``` 
+	If you get a path error running this command you will need to go into 'template.config.properties' file on your local machine(vagrant shares folders with the local machine so changes made to local update the vagrant box) and update:
+	```
+	vagrant.files.translateFile
+	vagrant.files.templateFolder
+	``` 
 
-The local path to this file relative to repo source will be 'repo/services/templatem/'. 
-'vagrant.files.translateFile' has to point to the path location of the 'vagrant.files.translateFile' relative to your vagrant box.
-'vagrant.files.templateFolder' has to point to the path location of the folder that contains the templates relative to your vagrant box.
-Here are what my updated values look like: 
-```
-vagrant.files.translateFile = /vagrant/public_html/v3/v3framework/config/templatem.translate.json
-vagrant.files.templateFolder = /vagrant/public_html/v3/v3framework/adtemplates
-```
+	The local path to this file relative to repo source will be 'repo/services/templatem/'. 
+	'vagrant.files.translateFile' has to point to the path location of the 'vagrant.files.translateFile' relative to your vagrant box.
+	'vagrant.files.templateFolder' has to point to the path location of the folder that contains the templates relative to your vagrant box.
+	Here are what my updated values look like: 
+	```
+	vagrant.files.translateFile = /vagrant/public_html/v3/v3framework/config/templatem.translate.json
+	vagrant.files.templateFolder = /vagrant/public_html/v3/v3framework/adtemplates
+	```
 
-you can do this for your local machine as well, you will probably NOT have a local database setup though so I would not worry about this unless specifically required to work locally instead of through the Devbox. For completeness sake here are my updated variables for the local machine:
-```
-local.files.translateFile = ../../public_html/v3/v3framework/config/templatem.translate.json
-local.files.templateFolder = ../../public_html/v3/v3framework/adtemplates
-```
+	you can do this for your local machine as well, you will probably NOT have a local database setup though so I would not worry about this unless specifically required to work locally instead of through the Devbox. For completeness sake here are my updated variables for the local machine:
+	```
+	local.files.translateFile = ../../public_html/v3/v3framework/config/templatem.translate.json
+	local.files.templateFolder = ../../public_html/v3/v3framework/adtemplates
+	```
 
 9. Once 'sh templatem.sh resettemplates' works you need to process the templates with the command
-```bash
-sh templatem.sh process
-```
-Once this is finished you should be able to access the ad creator and see the templates.
-You will need to perform the templatem steps any time we update templates! 
+	```bash
+	sh templatem.sh process
+	```
+	Once this is finished you should be able to access the ad creator and see the templates.
+	You will need to perform the templatem steps any time we update templates! 
 
 #### Notes
  * The VM logs are in `/logs`
