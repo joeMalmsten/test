@@ -5,8 +5,8 @@
 Placelocal is the flagship product for Paperg. It is a `php` app with several associated services. We use `composer` to manage `php` dependencies, `bower` for `js` dependencies and `grunt` for building the frontend components.<br/>
 
 All of these tools have to be installed before you can use them to run the app.<br/><br/>
-[node.js](http://nodejs.org/download/) Note: npm command can be used once node.js is installed.<br/>
-[git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) Note: npm can install git, however I prefer downloading from thier website though.<br/><br/>
+[node.js](http://nodejs.org/download/) **Note:** npm command can be used once node.js is installed.<br/>
+[git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) **Note:** npm can install git, however I prefer downloading from thier website though.<br/><br/>
 Bower:
 ```bash
 "npm install -g bower"
@@ -73,7 +73,7 @@ This will populate your `vendor/` directory with our third-party dependencies.<b
 If you get any errors then most likely you have to install some individual packages due to some questionable dependency tracing.
 
 2. `npm install -g grunt-cli bower` <br/>
-	This installs some globally needed packages, only do this if you didn't do it in the earlier steps.
+	This installs some globally needed packages, **only do this if you didn't do it in the earlier steps.**
 3. `npm install`<br/>
    This will install all of the front-end dependencies
 4. `grunt`<br/>
